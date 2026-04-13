@@ -10,6 +10,6 @@ spec:
   path: ./apps/base/nginx
   prune: true
   sourceRef:
-    kind: HelmRepository
-    name: nginx
+    kind: GitRepository
+    name: flux-system
   targetNamespace: nginx
