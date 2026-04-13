@@ -1,9 +1,10 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
 metadata:
   name: nginx
   namespace: flux-system
 spec:
-  type: oci
-  interval: 1h
+  interval: 5m
   url: oci://ghcr.io/nginx/charts
+  ref:
+    tag: latest
