@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infrastructure-sources
+    - name: sources
   interval: 5m
   path: ./kustomize
   prune: true
