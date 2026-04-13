@@ -13,6 +13,7 @@ spec:
         name: nginx
         namespace: flux-system
   values:
-    replicaCount: 2
-    service:
-      type: ClusterIP
+    controller:
+      replicaCount: 2
+      service:
+        type: ClusterIP
