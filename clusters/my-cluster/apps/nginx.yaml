@@ -11,5 +11,5 @@ spec:
   prune: true
   sourceRef:
     kind: OCIRepository
-    name: flux-system
+    name: nginx
   targetNamespace: nginx
