@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: infrastructure-sources
   interval: 5m
-  path: ./charts/podinfo
+  path: ./kustomize
   prune: true
   sourceRef:
     kind: GitRepository
