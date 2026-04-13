@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chartRef:
     kind: OCIRepository
-    name: my-charts
+    name: nginx
     namespace: flux-system
   values:
     replicaCount: 2
