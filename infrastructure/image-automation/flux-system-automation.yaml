@@ -17,7 +17,7 @@ spec:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: |
-        chore(image): update {{range .Updated.Images}}{{.}}{{end}} to latest
+        chore(image): update {{range .Changed.Objects}}{{.}}{{end}} to latest
     push:
       branch: main
   update:
