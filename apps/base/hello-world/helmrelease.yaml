@@ -14,7 +14,8 @@ spec:
         name: hello-world
         namespace: flux-system
   values:
+    replicaCount: 3
     imagePullSecrets:
       - name: ghcr-secret
     image:
-      tag: 1.0.3 # {"$imagepolicy": "flux-system:hello-world:tag"}
+      tag: 1.0.2 # {"$imagepolicy": "flux-system:hello-world:tag"}
