@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - podinfo-remote.yaml
   - podinfo.yaml
+  - podinfo2.yaml
   - nginx.yaml
