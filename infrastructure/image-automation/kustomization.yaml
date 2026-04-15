@@ -4,3 +4,5 @@ resources:
   - podinfo-image.yaml
   - podinfo-policy.yaml
   - flux-system-automation.yaml
+  - hello-world-image.yaml
+  - hello-world-policy.yaml

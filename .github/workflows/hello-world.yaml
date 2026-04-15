@@ -1,0 +1,48 @@
+name: hello-world
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hello-world/**"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: yoshiryn/hello-world
+  CHART_REPO: oci://ghcr.io/yoshiryn/charts
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set version
+        run: echo "VERSION=1.0.${{ github.run_number }}" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: hello-world
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Package Helm chart
+        run: helm package hello-world/chart --version "$VERSION" --app-version "$VERSION"
+
+      - name: Push Helm chart to GHCR
+        run: helm push hello-world-"$VERSION".tgz ${{ env.CHART_REPO }}

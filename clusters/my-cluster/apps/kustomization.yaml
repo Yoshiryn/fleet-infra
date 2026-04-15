@@ -5,3 +5,4 @@ resources:
   - podinfo-kustomize.yaml
   - podinfo-helm.yaml
   - nginx.yaml
+  - hello-world.yaml
