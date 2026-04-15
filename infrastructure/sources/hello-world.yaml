@@ -7,3 +7,5 @@ spec:
   type: oci
   interval: 1h
   url: oci://ghcr.io/yoshiryn/charts
+  secretRef:
+    name: ghcr-secret
