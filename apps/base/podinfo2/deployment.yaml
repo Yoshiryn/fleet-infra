@@ -13,4 +13,4 @@ spec:
     spec:
       containers:
         - name: podinfo2d
-          image: ghcr.io/stefanprodan/podinfo:6.11.2 # {"$imagepolicy": "flux-system:podinfo"}
+          image: ghcr.io/stefanprodan/podinfo:6.10.0 # {"$imagepolicy": "flux-system:podinfo"}
