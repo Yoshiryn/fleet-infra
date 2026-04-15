@@ -14,4 +14,4 @@ spec:
         namespace: flux-system
   values:
     image:
-      tag: 6.10.0 # {"$imagepolicy": "flux-system:podinfo:tag"}
+      tag: 6.11.2 # {"$imagepolicy": "flux-system:podinfo:tag"}
