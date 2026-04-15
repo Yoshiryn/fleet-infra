@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo2
+  name: podinfo-kustomize
 spec:
   selector:
     matchLabels:
-      app: podinfo2
+      app: podinfo-kustomize
   template:
     metadata:
       labels:
-        app: podinfo2
+        app: podinfo-kustomize
     spec:
       containers:
-        - name: podinfo2d
+        - name: podinfo-kustomized
           image: ghcr.io/stefanprodan/podinfo:6.11.2 # {"$imagepolicy": "flux-system:podinfo"}
